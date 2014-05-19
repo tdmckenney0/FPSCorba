@@ -3,8 +3,6 @@
 	@email: tmckenney7@outlook.com
 */
 
-package Client;
-
 public class Result {
 
 	public Player attacker;
@@ -13,7 +11,15 @@ public class Result {
 	public Weapon weaponUsed; 
 	public Shield shieldUsed;
 	
+	public Result(Player attacker, Player defender, Integer damageDealt, Weapon weaponUsed, Shield shieldUsed) {
+		this.attacker = attacker;
+		this.defender = defender;
+		this.damageDealt = damageDealt;
+		this.weaponUsed = weaponUsed; 
+		this.shieldUsed = shieldUsed;
+	}
+	
 	public String toString() {
-		return attacker.getName() + " [" + attacker.getHealth() + "] (" + weaponUsed.getName() + " Level " + weaponUsed.getLevel() + ") ----> " + defender.getName() + " [" + defender.getHealth() + "] (" + shieldUsed.getName() + " Shield Level " + shieldUsed.getLevel() + ") : Dealt " + damageDealt + " Damage.";
+		return attacker.getName() + " [" + attacker.getHealth() + "] (" + weaponUsed.getName() + ") ----> " + defender.getName() + " [" + defender.getHealth() + "] (" + shieldUsed.getName() + ") : Dealt " + damageDealt + " Damage.";
 	}
 }

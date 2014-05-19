@@ -8,8 +8,6 @@
 	
 */
 
-package Client; 
-
 public enum WeaponType {
 	BULLET, ENERGY, FIRE, MELEE, PMS
 }

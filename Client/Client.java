@@ -1,11 +1,13 @@
 /* 
-
+	Client Logic will go here!
 */
-
-package Client;
 
 public class Client {
 
+	Player[] players;
 
-
+	public Client() {
+	
+	
+	}
 }
