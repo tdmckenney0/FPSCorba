@@ -1,5 +1,5 @@
 import FPSCorba.*;
-import org.omg.CosNmaing.*;
+import org.omg.CosNaming.*;
 import org.omg.PortableServer.*;
 import org.omg.CORBA.*;
 import java.util.ArrayList;
