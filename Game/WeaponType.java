@@ -9,5 +9,5 @@
 */
 
 public enum WeaponType {
-	BULLET, ENERGY, FIRE, MELEE, PMS
+	BULLET, ENERGY, FIRE, MELEE
 }
