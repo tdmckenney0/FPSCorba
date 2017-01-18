@@ -5,94 +5,88 @@
 	@email: tmckenney7@outlook.com
 */
 
-public class Player {
+public class Player extends Thread  {
 
-	/* Constants */
+	// Constants //
 
-		private static final int INIT_HEALTH = 100;
+	private static final int INIT_HEALTH = 100;
 		
-	/* Properties */
+	// Properties //
 
-		private Boolean isAlive; 
-		private String name; 
-		private Weapon weapon;
-		private Shield shield; 
-		private Integer health;
+	private Boolean isPlayerAlive; 
+	private String name; 
+	private Weapon weapon;
+	private Shield shield; 
+	private Integer health;
+
+	// Thread Entry //
+	
+	public void run() {
+		return;
+	}
 		
-	/* Constructor */
+	// Constructor //
 	
-		public Player(String name) {
-			this.name = name; 
-			this.isAlive = true;
-			this.health = INIT_HEALTH; 
-		}
+	public Player(String name) {
+		this.name = name; 
+		this.isPlayerAlive = true;
+		this.health = INIT_HEALTH; 
+	}
 	
-	/* Setters */
+	// Setters //
 	
-		public void setWeapon(Weapon weapon) {
-			this.weapon = weapon; 
-		}
-		
-		public void setShield(Shield shield) {
-			this.shield = shield;
-		}
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon; 
+	}
+	
+	public void setShield(Shield shield) {
+		this.shield = shield;
+	}
 
 		
-	/* Getters */
+	// Getters //
 	
-		public Weapon getWeapon() {
-			return this.weapon;
-		}
-		
-		public Shield getShield() {
-			return this.shield;
-		}
-		
-		public String getName() {
-			return this.name;
-		}
-		
-		public Integer getHealth() {
-			return this.health;
-		}
-		
-	/* Checkers */
+	public Weapon getWeapon() {
+		return this.weapon;
+	}
 	
-		public Boolean isAlive() {
-			return this.isAlive; 
+	public Shield getShield() {
+		return this.shield;
+	}
+	
+	public String getPlayerName() {
+		return this.name;
+	}
+	
+	public Integer getHealth() {
+		return this.health;
+	}
+		
+	// Checkers //
+	
+	public Boolean isPlayerAlive() {
+		return this.isPlayerAlive; 
+	}
+		
+	// Gameplay Methods //
+	
+	public void killPlayer() {
+		this.isPlayerAlive = false;
+	}
+	
+	public void dealDamage(Integer damageDealt) {
+		this.health = health - damageDealt;
+		
+		if(this.health <= 0) {
+			this.killPlayer();
 		}
-		
-	/* Gameplay Methods */
-	
-		/*
-			You Failed.
-		*/
-	
-			public void killPlayer() {
-				this.isAlive = false;
-			}
-		
-		/* 
-			Damage is dealt using this method
-		*/
-	
-			public void dealDamage(Integer damageDealt) {
-				this.health = health - damageDealt;
-				
-				if(this.health <= 0) {
-					this.killPlayer();
-				}
-			}
-		
-		/*
-			Stamina is boosted when you shrug off 100% of your damage
-		*/
-		
-			public void boostStamina() {
-				if(this.health < 150) {
-					this.health += 5; 
-				}
-			}
+	}
+
+	public void boostStamina() {
+		if(this.health < 150) {
+			this.health += 5; 
+		}
+	}
 		
 		/* 
 			Knock-back is dealt when an enemy defends 100% of the damage 

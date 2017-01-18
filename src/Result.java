@@ -20,6 +20,6 @@ public class Result {
 	}
 	
 	public String toString() {
-		return attacker.getName() + " [" + attacker.getHealth() + "] (" + weaponUsed.getName() + ") ----> " + defender.getName() + " [" + defender.getHealth() + "] (" + shieldUsed.getName() + ") : Dealt " + damageDealt + " Damage.";
+		return attacker.getPlayerName() + " [" + attacker.getHealth() + "] (" + weaponUsed.getName() + ") ----> " + defender.getPlayerName() + " [" + defender.getHealth() + "] (" + shieldUsed.getName() + ") : Dealt " + damageDealt + " Damage.";
 	}
 }

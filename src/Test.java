@@ -19,16 +19,16 @@ public class Test {
 			
 			System.out.println(player2.attack(player1));
 			
-			if(!player1.isAlive()) {
-				System.out.println(player2.getName() + " Killed " + player1.getName() + "!");
+			if(!player1.isPlayerAlive()) {
+				System.out.println(player2.getPlayerName() + " Killed " + player1.getPlayerName() + "!");
 				System.out.println(" -- Game Over -- ");
 				break; 
 			}
 			
 			System.out.println(player1.attack(player2));
 			
-			if(!player2.isAlive()) {
-				System.out.println(player1.getName() + " Killed " + player2.getName() + "!");
+			if(!player2.isPlayerAlive()) {
+				System.out.println(player1.getPlayerName() + " Killed " + player2.getPlayerName() + "!");
 				System.out.println(" -- Game Over -- ");
 				break; 
 			}

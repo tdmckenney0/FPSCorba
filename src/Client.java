@@ -6,7 +6,7 @@ public class Client {
 
     public static String encode(String str) {
 
-        //  \\s*,\\s*
+        // RegEx for CSV ---->  \\s*,\\s*
 
         return new String(Base64.getEncoder().encode(str.getBytes()));
     }
