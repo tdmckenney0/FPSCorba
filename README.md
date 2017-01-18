@@ -1,4 +1,4 @@
-FPSCorba
+FPSJava
 ========
 
-Deathmatch Written in CORBA
+Deathmatch Written in Java

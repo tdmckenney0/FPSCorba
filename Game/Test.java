@@ -2,8 +2,8 @@ public class Test {
 
     public static void main(String[] args) {
 	
-		Player player1 = new Player("MakAttack");
-		Player player2 = new Player("BallerNova");
+		Player player1 = new Player("Rushi");
+		Player player2 = new Player("Jordan");
 		
 		Integer round = 1; 
 		

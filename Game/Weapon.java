@@ -2,7 +2,7 @@
 	@author: Tanner Mckenney	
 	@email: tmckenney7@outlook.com
 	
-	Weapon class for FPS CORBA
+	Weapon class for FPS Java
 	
 */
 
