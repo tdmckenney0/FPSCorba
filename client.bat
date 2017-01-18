@@ -1,5 +1,3 @@
-start java ProjectFourAppClient -ORBInitialPort 1050 -ORBInitialHost localhost
-start java ProjectFourAppClient -ORBInitialPort 1050 -ORBInitialHost localhost
-start java ProjectFourAppClient -ORBInitialPort 1050 -ORBInitialHost localhost
-start java ProjectFourAppClient -ORBInitialPort 1050 -ORBInitialHost localhost
-start java ProjectFourAppClient -ORBInitialPort 1050 -ORBInitialHost localhost
+pushd .\src\
+start java Client localhost 5555
+popd
