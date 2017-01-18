@@ -14,6 +14,7 @@ public class Player extends Thread  {
 	// Properties //
 
 	private Boolean isPlayerAlive; 
+	private Boolean isPlayerReady;
 	private String name; 
 	private Weapon weapon;
 	private Shield shield; 
@@ -67,6 +68,10 @@ public class Player extends Thread  {
 	public Boolean isPlayerAlive() {
 		return this.isPlayerAlive; 
 	}
+
+	public Boolean isPlayerReady() {
+		return this.isPlayerReady; 
+	}
 		
 	// Gameplay Methods //
 	
@@ -87,37 +92,33 @@ public class Player extends Thread  {
 			this.health += 5; 
 		}
 	}
-		
-		/* 
-			Knock-back is dealt when an enemy defends 100% of the damage 
-		*/
-		
-			public void knockBack() {
-				this.health -= 5; 
-			}
-			
-		/* 
-			Attack is the standard attack logic 
-		*/
 
-			public Result attack(Player enemy) {
-			
-				Integer damageDealt = 0; 
-				Shield enemyShield = enemy.getShield();
-				
-				if(enemyShield.getType() == this.weapon.getType()) {
-					damageDealt = (this.weapon.getDamage() - enemyShield.getResistance());
-				} else {
-					damageDealt = this.weapon.getDamage();
-				}
-				
-				if(damageDealt == 0) {
-					enemy.boostStamina();
-					this.knockBack();
-				} else {
-					enemy.dealDamage(damageDealt);
-				}
-				
-				return new Result(this, enemy, damageDealt, this.weapon, enemy.getShield());
-			}
+	// Knock-back is dealt when an enemy defends 100% of the damage //
+
+	public void knockBack() {
+		this.health -= 5; 
+	}
+
+	// Attack() is the standard attack logic //
+
+	public Result attack(Player enemy) {
+	
+		Integer damageDealt = 0; 
+		Shield enemyShield = enemy.getShield();
+		
+		if(enemyShield.getType() == this.weapon.getType()) {
+			damageDealt = (this.weapon.getDamage() - enemyShield.getResistance());
+		} else {
+			damageDealt = this.weapon.getDamage();
+		}
+		
+		if(damageDealt == 0) {
+			enemy.boostStamina();
+			this.knockBack();
+		} else {
+			enemy.dealDamage(damageDealt);
+		}
+		
+		return new Result(this, enemy, damageDealt, this.weapon, enemy.getShield());
+	}
 }
